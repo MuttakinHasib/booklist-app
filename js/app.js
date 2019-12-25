@@ -11,7 +11,8 @@ class Book {
 // UI Class: Handle UI Tasks
 
 class UI {
-  static DisplayBooks() {
+  static displayBooks() {
+
     const books = Store.getBooks();
 
     books.forEach(book => {
@@ -30,12 +31,6 @@ class UI {
         <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
     `;
     list.appendChild(row);
-  }
-
-  static clearField() {
-    document.querySelector("#title").value = "";
-    document.querySelector("#author").value = "";
-    document.querySelector("#isbn").value = "";
   }
 
   static deleteBook(el) {
@@ -57,6 +52,12 @@ class UI {
     setTimeout(_ => {
       document.querySelector(".alert").remove();
     }, 1500);
+  }
+
+  static clearField() {
+    document.querySelector("#title").value = "";
+    document.querySelector("#author").value = "";
+    document.querySelector("#isbn").value = "";
   }
 }
 
